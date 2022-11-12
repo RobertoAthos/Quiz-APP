@@ -64,7 +64,7 @@ export default function Quiz() {
               onClick={() => {
                 chooseOption("optionD");
               }}
-              className="w-[500px] p-4 text-3xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
+              className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >
               {Questions[currentQuestion].optionA}
             </button>
@@ -74,7 +74,7 @@ export default function Quiz() {
               onClick={() => {
                 chooseOption("optionD hover:bg-[#00CC65]");
               }}
-              className="w-[500px] p-4 text-3xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
+              className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >
               {Questions[currentQuestion].optionB}
             </button>
@@ -94,7 +94,7 @@ export default function Quiz() {
               onClick={() => {
                 chooseOption("optionD");
               }}
-              className="w-[500px] p-4 text-3xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
+              className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >
               {Questions[currentQuestion].optionD}
             </button>

@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import windImg from "../Assets/img1.jpg";
+import windImg from "../Assets/img2.jpg";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <section>
-      <Image src={windImg} alt="wind power background" />
+      <Image src={windImg} alt='wind power background'/>
 
       <div className="w-full h-screen  absolute top-0 flex justify-center items-center ">
         <div className="text-center text-white bg-white w-[600px] h-96 rounded-3xl">

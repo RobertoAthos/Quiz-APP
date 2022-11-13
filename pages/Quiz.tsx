@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Questions } from "../Helper/Questions";
-import Image from "next/image";
-import img from "../Assets/thumbsup.png";
 import ModalCorrectAnswer from "../Components/ModalCorrectAnswer";
+import ModalIncorrectAswer from "../Components/ModalIncorrectAswer";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowRight, AiOutlineArrowLeft, AiOutlineClose } from "react-icons/ai";
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [optionChosen, setOptionChosen] = useState("");
+  const [correctAnswer, setCorrectAnswer] = useState(false);
+  const [incorrectAnswer, setIncorrectAnswer] = useState(false);
+
+
 
   const chooseOption = (option: string) => {
     setOptionChosen(option);
@@ -17,6 +20,8 @@ export default function Quiz() {
 
   const checkAnswer = () => {
     if (Questions[currentQuestion].asnwer == optionChosen) {
+      setCorrectAnswer(true);
+
       toast.success("CERTA RESPOSTA !", {
         position: "bottom-right",
         autoClose: 5000,
@@ -28,6 +33,8 @@ export default function Quiz() {
         theme: "light",
       });
     } else {
+      setIncorrectAnswer(true)
+      
       toast.error("REPOSTA INCORRETA !", {
         position: "bottom-right",
         autoClose: 5000,
@@ -38,6 +45,7 @@ export default function Quiz() {
         progress: undefined,
         theme: "light",
       });
+      
     }
   };
 
@@ -51,9 +59,30 @@ export default function Quiz() {
 
   return (
     <section className="w-full max-w-screen-2xl m-auto">
-      {/* <div className=" w-full h-screen absolute flex justify-center items-center">
-        <ModalCorrectAnswer/>
-      </div> */}
+      {correctAnswer == true ? (
+        <div className=" w-full h-screen bg-[#000000a9] absolute flex justify-center items-center">
+          <ModalCorrectAnswer/>
+          <button 
+          onClick={()=>setCorrectAnswer(false)} 
+          className='absolute top-28 right-52 text-white text-6xl font-extrabold'>
+            <AiOutlineClose/>
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
+      {incorrectAnswer == true ? (
+        <div className=" w-full h-screen bg-[#000000a9] absolute flex justify-center items-center">
+        <ModalIncorrectAswer/>
+        <button 
+        onClick={()=>setIncorrectAnswer(false)} 
+        className='absolute top-28 right-52 text-white text-6xl font-extrabold'>
+          <AiOutlineClose/>
+        </button>
+      </div>
+      ) : (
+        <></>
+      )}
       <div>
         <header className="w-full h-24 flex justify-center items-center bg-[#00CC65] text-white font-semibold ">
           <h2 className="text-3xl">{Questions[currentQuestion].question}</h2>

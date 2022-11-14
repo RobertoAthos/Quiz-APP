@@ -91,7 +91,7 @@ export default function Quiz() {
           <div className="">
             <button
               onClick={() => {
-                chooseOption("optionD");
+                chooseOption("optionA");
               }}
               className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >
@@ -101,7 +101,7 @@ export default function Quiz() {
           <div>
             <button
               onClick={() => {
-                chooseOption("optionD hover:bg-[#00CC65]");
+                chooseOption("optionB");
               }}
               className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >
@@ -111,7 +111,7 @@ export default function Quiz() {
           <div>
             <button
               onClick={() => {
-                chooseOption("optionD");
+                chooseOption("optionC");
               }}
               className="w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-[#00CC65] hover:text-white"
             >

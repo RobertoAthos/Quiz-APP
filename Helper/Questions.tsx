@@ -8,12 +8,12 @@ export const Questions = [
         "asnwer": "optionD"
     },
     {
-        "question": "Qual a única resposta que corresponde a duas das vantagens da energia eólica? ",
-        "optionA": "É inesgotável, mas é cara",
+        "question": " Qual o mais importante benefício ao meio ambiente da geração eólica ",
+        "optionA": "A não omissão de dióxido de carbono",
         "optionB": "É inesgotável e não emite gases poluentes",
-        "optionC": "Criação de emprego e o impacto visual",
-        "optionD": "A intermitência e o preço",
-        "asnwer": "optionD"
+        "optionC": "Consome menos energia",
+        "optionD": "É barato",
+        "asnwer": "optionA"
     },
     {
         "question": "Onde podemos aplicar a energia eólica?",

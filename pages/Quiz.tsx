@@ -10,6 +10,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import Transition from "../Components/Transition";
+import Link from "next/link";
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -95,16 +96,16 @@ export default function Quiz() {
           <></>
         )}
         <div>
-          <header className="w-full h-24 flex justify-center items-center bg-[#00CC65] text-white font-semibold ">
-            <h2 className="text-3xl">{Questions[currentQuestion].question}</h2>
+          <header className="w-full p-6 flex justify-center items-center bg-[#00CC65] text-white text-center font-semibold ">
+            <h2 className="text-xl md:text-3xl">{Questions[currentQuestion].question}</h2>
           </header>
-          <div className="w-full grid grid-cols-2 gap-2 justify-items-center content-center mt-20 max-w-screen-2xl m-auto">
+          <div className="w-full flex flex-wrap justify-center  items-center mt-20 max-w-screen-2xl m-auto">
             <div className="">
               <button
                 onClick={() => {
                   chooseOption("optionA");
                 }}
-                className={'w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-10 focus:bg-green-500 focus:text-white'}
+                className={'w-[300px]text-xl md:w-[500px] text-2xl p-4  md: border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white'}
               >
                 {Questions[currentQuestion].optionA}
               </button>
@@ -114,7 +115,7 @@ export default function Quiz() {
                 onClick={() => {
                   chooseOption("optionB");
                 }}
-                className={'w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-10 focus:bg-green-500 focus:text-white'}
+                className={'w-[300px]text-xl md:w-[500px] text-2xl p-4  md: border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white'}
               >
                 {Questions[currentQuestion].optionB}
               </button>
@@ -124,7 +125,7 @@ export default function Quiz() {
                 onClick={() => {
                   chooseOption("optionC");
                 }}
-                className={'w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white'}
+                className={'w-[300px]text-xl md:w-[500px] text-2xl p-4  md: border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white'}
               >
                 {Questions[currentQuestion].optionC}
               </button>
@@ -134,7 +135,7 @@ export default function Quiz() {
                 onClick={() => {
                   chooseOption("optionD");
                 }}
-                className={'w-[500px] p-4 text-2xl border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white '}
+                className={'w-[300px]text-xl md:w-[500px] text-2xl p-4  md: border border-[#00CC65] rounded-3xl text-center shadow-2xl m-6 hover:bg-slate-100 focus:bg-green-500 focus:text-white'}
               >
                 {Questions[currentQuestion].optionD}
               </button>
@@ -150,8 +151,8 @@ export default function Quiz() {
           </div>
           <div className="w-full max-w-[600px] m-auto flex justify-around mt-10">
             {currentQuestion == Questions.length - 1 ? (
-              <button className="p-4 bg-blue-500 text-white text-2xl rounded-xl w-52 hover:bg-blue-700">
-                Finalizar
+              <button className="p-2 bg-blue-500 text-white text-2xl rounded-xl w-52 hover:bg-blue-700">
+                <Link href='/'>Recomeçar Quiz</Link>
               </button>
             ) : (
               <>
